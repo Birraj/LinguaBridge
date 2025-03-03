@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinguaBridge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='courses.css'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: white;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            color: #0e67c5;
+            font-size: 2.5rem;
+        }
+
+        .courses-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 50px auto;
+            width: 80%;
+
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 10px;
+            margin: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
+            width: 300px;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .course-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .course-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin: 20px 0;
+        }
+
+        .course-description {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .course-price {
+            color: black;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .enroll-btn {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border-color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .enroll-btn:hover {
+            background-color: white;
+            color: black;
+            border-color: black;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .course-card {
+            animation: fadeInUp 0.8s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+       Lingua Bridge - Explore Our Courses
+    </header>
+
+    <div class="heading2">
+        <a href="login.html">
+            <button class=" h2">LOGIN</button>
+        </a>
+        <a href= search.html>
+            <button class=" h2">SEARCH</button>
+        </a>
+        <button class=" h2">COURSES</button>
+        <a href="communities.html">
+            <button class=" h2">COMMUNITIES</button>
+        </a>
+        <a href="frontpage.html">
+            <button class=" h2">HOME</button>
+        </a>
+    </div>
+
+    <div class="courses-container">
+        <div class="course-card">
+            <img src="german.jpg" alt="Course Image">
+            <h2 class="course-title">GERMAN 101</h2>
+            <p class="course-description">Learn A level German </p>
+            <p class="course-price">₹1000</p>
+            <a href="payment.html">
+                <button class="enroll-btn">Enroll Now</button>
+            </a>
+        </div>
+
+        <div class="course-card">
+            <img src="italian.png" alt="Course Image">
+            <h2 class="course-title">FORZA E ITALI</h2>
+            <p class="course-description">Learn Italian </p>
+            <p class="course-price">₹1500</p>
+            <a href="payment.html">
+                <button class="enroll-btn">Enroll Now</button>
+            </a>
+        </div>
+
+        <div class="course-card">
+            <img src="spainn.jpg" alt="Course Image">
+            <h2 class="course-title">ESPANOL</h2>
+            <p class="course-description">Learn grade 1 Spanish</p>
+            <p class="course-price">₹800</p>
+            <a href="payment.html">
+                <button class="enroll-btn">Enroll Now</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>

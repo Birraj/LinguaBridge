@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>BookBarter</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='frontpage.css'>
+    <script src='main.js'></script>
+    <style>
+        /* Optional: Add some styling for better readability */
+        .intro-para {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="heading1">
+        <img class="logo" src="logo.png">
+        <h1 class="web-name">BOOK BARTER</h1>
+        <img class="book" src="book.png">
+    </div>
+    <div class="heading2">
+        <button class="h2">HOME</button>
+        <a href="search.html">
+            <button class="h2">SEARCH</button>
+        </a>
+        <button class="h2">SHOP</button>
+        <button class="h2">COMMUNITIES</button>
+        <button class="h2">ABOUT US</button>
+    </div>
+    <div class="box1">
+        <p class="intro">WELCOME!</p>
+        <p class="intro-para">n this project, we will be building an Instagram Clone using HTML and CSS, which includes creating a posting page where users can scroll and see the posted images. This project is majorly divided into 3 different sections first is the Header section Here, we will build the simple navbar & header of the page that includes the search bar and the status uploaded by followers.
+
+            Second is the Page Content section, this section will contain the main content of the page which includes the post feeds that are uploaded by the user last is the Footer section Here, this section will contain the footer content that includes an About Me section, Copyright Symbol, Help, Privacy Policy, and/or Terms & Conditions.
+        </p>
+    </div>
+
+    <script>
+        // JavaScript to limit the word count in the "intro-para" class
+        const introPara = document.querySelector('.intro-para');
+        const words = introPara.innerText.split(' ');
+
+        // Limit to the first 10 words
+        const limitedWords = words.slice(0, 10).join(' ');
+        
+        // Update the paragraph with limited content
+        introPara.innerText = limitedWords + (words.length > 10 ? '...' : '');
+    </script>
+</body>
+</html>

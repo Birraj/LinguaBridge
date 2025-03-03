@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+
+        .search-container {
+            text-align: center;
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .search-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .search-container p {
+            font-size: 1rem;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .search-box {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .search-box input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            outline: none;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-box input[type="text"]:focus {
+            border-color: #2b6cb0;
+        }
+
+        .search-box button {
+            padding: 15px 30px;
+            background-color: #2b6cb0;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-box button:hover {
+            background-color: #2c5282;
+        }
+
+        .results {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .result-item {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .result-item p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        @media (max-width: 600px) {
+            .search-box {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .search-box input[type="text"],
+            .search-box button {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="search-container">
+        <h1>Search</h1>
+        <p>Find what you're looking for by entering a keyword below.</p>
+
+        <div class="search-box">
+            <input type="text" placeholder="Enter your search term..." id="searchInput">
+            <button onclick="performSearch()">Search</button>
+        </div>
+
+        <div class="results" id="resultsContainer">
+            <!-- Search results will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value;
+            const resultsContainer = document.getElementById('resultsContainer');
+
+            // Mock search results
+            const results = [
+                { title: 'First Search Result', description: 'This is the first search result description.' },
+                { title: 'Second Search Result', description: 'This is the second search result description.' },
+                { title: 'Third Search Result', description: 'This is the third search result description.' }
+            ];
+
+            // Clear any previous results
+            resultsContainer.innerHTML = '';
+
+            // Display results based on the search term (mock logic for now)
+            if (searchTerm.trim() === '') {
+                resultsContainer.innerHTML = '<p>Please enter a search term.</p>';
+            } else {
+                results.forEach(result => {
+                    const resultItem = document.createElement('div');
+                    resultItem.classList.add('result-item');
+
+                    const title = document.createElement('h3');
+                    title.textContent = result.title;
+
+                    const description = document.createElement('p');
+                    description.textContent = result.description;
+
+                    resultItem.appendChild(title);
+                    resultItem.appendChild(description);
+
+                    resultsContainer.appendChild(resultItem);
+                });
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+root: "C:\Users\pitbu\Downloads\Js-Language-Translator-main\Js-Language-Translator-main" 
+path: C:\Program Files\nodejs 
+arch: 64 
+proxy: none

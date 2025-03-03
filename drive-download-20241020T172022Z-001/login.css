@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    position: relative; /* Needed for the pseudo-element */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: none; /* Remove the direct background image here */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('lg.jpg') no-repeat center center;
+    background-size: contain; /* Or use 'cover' depending on the desired effect */
+    background-attachment: fixed;
+    opacity: 0.5; /* Adjust opacity level here */
+    z-index: -1; /* Keep it behind the content */
+}
+
+.wrapper {
+    position: relative;
+    z-index: 1; /* Ensure the wrapper is above the background */
+    width: 420px;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for better visibility */
+    border: 2px solid rgba(255, 255, 255, .3); /* Increase border visibility */
+    backdrop-filter: blur(9px);
+    color: #fff;
+    border-radius: 12px;
+    padding: 30px 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Add subtle shadow for depth */
+}
+
+.wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+    color: #fff; /* Ensure the heading stands out */
+}
+
+.wrapper .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1); /* Light transparent background for input fields */
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .5); /* More visible border */
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Make placeholders less intense but visible */
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 30%;
+    transform: translate(-50%);
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.7); /* Make icon visible */
+}
+
+.wrapper .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+
+.remember-forgot label input {
+    accent-color: #fff;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: rgba(255, 255, 255, 0.9); /* Slightly lighter for better visibility */
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.9); /* Make the button stand out with higher opacity */
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2); /* Subtle shadow for the button */
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.wrapper .register-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.register-link p a {
+    color: rgba(255, 255, 255, 0.9); /* Slightly brighter links */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}

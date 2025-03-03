@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>LinguaBridge</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='frontpage.css'>
+    <script src='main.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="logo-container">
+            <img class="logo" src="logo.png" alt="LinguaBridge Logo">
+            <h1 class="web-name">LinguaBridge</h1>
+        </div>
+        <nav class="main-nav">
+            <a href="login.html"><button class="nav-btn">Login</button></a>
+            <a href="search.html"><button class="nav-btn">Search</button></a>
+            <a href="courses.html"><button class="nav-btn">Courses</button></a>
+            <a href="communities.html"><button class="nav-btn">Communities</button></a>
+            <a href="#about"><button class="nav-btn">About Us</button></a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Welcome to LinguaBridge</h2>
+        <p>Your gateway to multilingual communication and linguistic services.</p>
+    </section>
+
+    <section class="intro-section" id="about">
+        <h2>About Us</h2>
+        <p>LinguaBridge is known for offering professional translation, interpretation, and localization services across multiple languages. We bridge language barriers for businesses and individuals, ensuring clear communication. We also offer linguistic research services and more.</p>
+    </section>
+
+    <!-- Translation Interface -->
+    <section class="translation-container">
+        <h2>Quick Translation</h2>
+        <div class="translation-area">
+            <div class="input-area">
+                <select id="sourceLang" class="lang-select">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                </select>
+                <textarea id="sourceText" placeholder="Enter text to translate..."></textarea>
+            </div>
+
+            <div class="output-area">
+                <select id="targetLang" class="lang-select">
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="en">English</option>
+                    <option value="de">German</option>
+                </select>
+                <textarea id="translatedText" placeholder="Translation will appear here..." readonly></textarea>
+            </div>
+        </div>
+        <button id="translateButton" class="translate-btn">Translate</button>
+        <a href="index.html">
+            <buttton class="translate-bttn">Main Translation</buttton>
+        </a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 LinguaBridge. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Expanded dictionary for translations
+        const dictionary = {
+            en: {
+                hello: 'hello',
+                world: 'world',
+                how: 'how',
+                are: 'are',
+                you: 'you',
+                goodbye: 'goodbye',
+                thank: 'thank you',
+                please: 'please',
+                yes: 'yes',
+                no: 'no',
+                good: 'good',
+                morning: 'good morning',
+                night: 'good night',
+                friend: 'friend',
+                family: 'family',
+                love: 'love',
+                help: 'help',
+                welcome: 'welcome',
+                see: 'see you later',
+                what: 'what is your name',
+                myName: 'my name is',
+                excuse: 'excuse me',
+                sorry: 'sorry',
+                howAreYou: 'how are you?',
+                niceToMeetYou: 'nice to meet you',
+                whereIsTheBathroom: 'where is the bathroom?',
+                canYouHelpMe: 'can you help me?',
+                iDonTUnderstand: 'i don’t understand',
+                whatTimeIsIt: 'what time is it?',
+                iAmLost: 'i am lost'
+            },
+            es: {
+                hello: 'hola',
+                world: 'mundo',
+                how: 'cómo',
+                are: 'estás',
+                you: 'tú',
+                goodbye: 'adiós',
+                thank: 'gracias',
+                please: 'por favor',
+                yes: 'sí',
+                no: 'no',
+                good: 'bueno',
+                morning: 'buenos días',
+                night: 'buenas noches',
+                friend: 'amigo',
+                family: 'familia',
+                love: 'amor',
+                help: 'ayuda',
+                welcome: 'bienvenido',
+                see: 'hasta luego',
+                what: '¿cuál es tu nombre?',
+                myName: 'me llamo',
+                excuse: 'disculpe',
+                sorry: 'lo siento',
+                howAreYou: '¿cómo estás?',
+                niceToMeetYou: 'encantado de conocerte',
+                whereIsTheBathroom: '¿dónde está el baño?',
+                canYouHelpMe: '¿puedes ayudarme?',
+                iDonTUnderstand: 'no entiendo',
+                whatTimeIsIt: '¿qué hora es?',
+                iAmLost: 'estoy perdido'
+            },
+            fr: {
+                hello: 'bonjour',
+                world: 'monde',
+                how: 'comment',
+                are: 'êtes',
+                you: 'vous',
+                goodbye: 'au revoir',
+                thank: 'merci',
+                please: 'sil vous plaît',
+                yes: 'oui',
+                no: 'non',
+                good: 'bon',
+                morning: 'bonjour',
+                night: 'bonne nuit',
+                friend: 'ami',
+                family: 'famille',
+                love: 'amour',
+                help: 'aide',
+                welcome: 'bienvenue',
+                see: 'à plus tard',
+                what: 'quel est votre nom?',
+                myName: 'je mappelle',
+                excuse: 'excusez-moi',
+                sorry: 'désolé',
+                howAreYou: 'comment ça va?',
+                niceToMeetYou: 'enchanté de vous rencontrer',
+                whereIsTheBathroom: 'où sont les toilettes?',
+                canYouHelpMe: 'pouvez-vous maider?',
+                iDonTUnderstand: 'je ne comprends pas',
+                whatTimeIsIt: 'quelle heure est-il?',
+                iAmLost: 'je suis perdu'
+            },
+            de: {
+                hello: 'hallo',
+                world: 'welt',
+                how: 'wie',
+                are: 'bist',
+                you: 'du',
+                goodbye: 'auf Wiedersehen',
+                thank: 'danke',
+                please: 'bitte',
+                yes: 'ja',
+                no: 'nein',
+                good: 'gut',
+                morning: 'guten Morgen',
+                night: 'gute Nacht',
+                friend: 'freund',
+                family: 'familie',
+                love: 'liebe',
+                help: 'hilfe',
+                welcome: 'willkommen',
+                see: 'bis später',
+                what: 'wie heißt du?',
+                myName: 'ich heiße',
+                excuse: 'entschuldigen Sie',
+                sorry: 'es tut mir leid',
+                howAreYou: 'wie geht es dir?',
+                niceToMeetYou: 'schön, dich kennenzulernen',
+                whereIsTheBathroom: 'wo ist die toilette?',
+                canYouHelpMe: 'kannst du mir helfen?',
+                iDonTUnderstand: 'ich verstehe nicht',
+                whatTimeIsIt: 'wie spät ist es?',
+                iAmLost: 'ich bin verloren'
+            }
+        };
+
+        // Translation function
+        function translate() {
+            const sourceText = document.getElementById('sourceText').value.toLowerCase().trim();
+            const sourceLang = document.getElementById('sourceLang').value;
+            const targetLang = document.getElementById('targetLang').value;
+
+            const words = sourceText.split(' ');
+
+            let translatedText = words.map(word => {
+                // Translate from source language to English first
+                return dictionary[sourceLang][word] || word;
+            }).join(' ');
+
+            // Translate from English to target language
+            translatedText = translatedText.split(' ').map(word => {
+                return dictionary[targetLang][word] || word;
+            }).join(' ');
+
+            document.getElementById('translatedText').value = translatedText;
+        }
+
+        // Event listener for the translate button
+        document.getElementById('translateButton').addEventListener('click', translate);
+
+        // Event listener for redirect button
+        document.getElementById('translateRedirectButton').addEventListener('click', function () {
+            window.location.href = 'index.html';  // Redirects to index.html
+        });
+    </script>
+</body>
+
+</html
